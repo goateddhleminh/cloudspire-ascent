@@ -1,0 +1,1304 @@
+{
+  "project": "Cloudspire Ascent",
+  "version": "2.0.0",
+  "visual_system": "Celestial Toybox Bastion",
+  "total_assets": 81,
+  "assets": [
+    {
+      "id": "ambience_sky_wind_loop",
+      "path": "/assets/audio/music/ambience_sky_wind_loop.wav",
+      "category": "music",
+      "format": "WAV",
+      "bytes": 705644,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "music_combat_loop",
+      "path": "/assets/audio/music/music_combat_loop.wav",
+      "category": "music",
+      "format": "WAV",
+      "bytes": 705644,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "music_sanctuary_loop",
+      "path": "/assets/audio/music/music_sanctuary_loop.wav",
+      "category": "music",
+      "format": "WAV",
+      "bytes": 1129004,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_chest_open",
+      "path": "/assets/audio/sfx/sfx_chest_open.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 55610,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_coin_01",
+      "path": "/assets/audio/sfx/sfx_coin_01.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 25180,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_coin_02",
+      "path": "/assets/audio/sfx/sfx_coin_02.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 25180,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_defeat",
+      "path": "/assets/audio/sfx/sfx_defeat.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 97946,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_double_jump",
+      "path": "/assets/audio/sfx/sfx_double_jump.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 33560,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_dummy_bonk",
+      "path": "/assets/audio/sfx/sfx_dummy_bonk.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 21212,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_enemy_defeat",
+      "path": "/assets/audio/sfx/sfx_enemy_defeat.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 40616,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_enemy_shockwave",
+      "path": "/assets/audio/sfx/sfx_enemy_shockwave.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 37088,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_enemy_shoot",
+      "path": "/assets/audio/sfx/sfx_enemy_shoot.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 17684,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_enemy_windup",
+      "path": "/assets/audio/sfx/sfx_enemy_windup.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 28268,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_floor_clear",
+      "path": "/assets/audio/sfx/sfx_floor_clear.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 72368,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_hit_crit",
+      "path": "/assets/audio/sfx/sfx_hit_crit.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 24740,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_hit_light_01",
+      "path": "/assets/audio/sfx/sfx_hit_light_01.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 15038,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_hit_light_02",
+      "path": "/assets/audio/sfx/sfx_hit_light_02.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 15038,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_hit_light_03",
+      "path": "/assets/audio/sfx/sfx_hit_light_03.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 15038,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_jump",
+      "path": "/assets/audio/sfx/sfx_jump.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 14156,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_jumppad",
+      "path": "/assets/audio/sfx/sfx_jumppad.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 37970,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_land",
+      "path": "/assets/audio/sfx/sfx_land.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 10628,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_level_up",
+      "path": "/assets/audio/sfx/sfx_level_up.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 67076,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_player_hurt",
+      "path": "/assets/audio/sfx/sfx_player_hurt.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 24740,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_portal_enter",
+      "path": "/assets/audio/sfx/sfx_portal_enter.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 62666,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_shield_block",
+      "path": "/assets/audio/sfx/sfx_shield_block.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 22976,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_shrine_bless",
+      "path": "/assets/audio/sfx/sfx_shrine_bless.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 65310,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_skill_dash",
+      "path": "/assets/audio/sfx/sfx_skill_dash.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 21212,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_skill_lance",
+      "path": "/assets/audio/sfx/sfx_skill_lance.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 32678,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_skill_nova",
+      "path": "/assets/audio/sfx/sfx_skill_nova.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 49434,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_skill_shield",
+      "path": "/assets/audio/sfx/sfx_skill_shield.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 45908,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_slash_01",
+      "path": "/assets/audio/sfx/sfx_slash_01.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 16802,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_slash_02",
+      "path": "/assets/audio/sfx/sfx_slash_02.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 17684,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_slash_03_finisher",
+      "path": "/assets/audio/sfx/sfx_slash_03_finisher.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 25622,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_step_01",
+      "path": "/assets/audio/sfx/sfx_step_01.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 7540,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_step_02",
+      "path": "/assets/audio/sfx/sfx_step_02.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 7540,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_tonic_drink",
+      "path": "/assets/audio/sfx/sfx_tonic_drink.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 40616,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_ui_buy",
+      "path": "/assets/audio/sfx/sfx_ui_buy.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 37088,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_ui_click",
+      "path": "/assets/audio/sfx/sfx_ui_click.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 15478,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_ui_error",
+      "path": "/assets/audio/sfx/sfx_ui_error.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 30914,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_ui_hover",
+      "path": "/assets/audio/sfx/sfx_ui_hover.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 11068,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "sfx_victory",
+      "path": "/assets/audio/sfx/sfx_victory.wav",
+      "category": "sfx",
+      "format": "WAV",
+      "bytes": 105884,
+      "pivot": "n/a",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python DSP 44.1kHz 16-bit PCM synthesizer",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "headgear_crown",
+      "path": "/assets/models/characters/headgear_crown.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 16908,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "headgear_halo",
+      "path": "/assets/models/characters/headgear_halo.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 17776,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "headgear_visor",
+      "path": "/assets/models/characters/headgear_visor.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 12488,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "headgear_void_horns",
+      "path": "/assets/models/characters/headgear_void_horns.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 5260,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "vanguard_hero",
+      "path": "/assets/models/characters/vanguard_hero.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 90744,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "wings_aether",
+      "path": "/assets/models/characters/wings_aether.glb",
+      "category": "characters",
+      "format": "GLB",
+      "bytes": 16676,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "enemy_aegis_juggernaut",
+      "path": "/assets/models/enemies/enemy_aegis_juggernaut.glb",
+      "category": "enemies",
+      "format": "GLB",
+      "bytes": 33576,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "enemy_crimson_striker",
+      "path": "/assets/models/enemies/enemy_crimson_striker.glb",
+      "category": "enemies",
+      "format": "GLB",
+      "bytes": 37684,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "enemy_prism_sentinel",
+      "path": "/assets/models/enemies/enemy_prism_sentinel.glb",
+      "category": "enemies",
+      "format": "GLB",
+      "bytes": 46336,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "enemy_spire_warden_boss",
+      "path": "/assets/models/enemies/enemy_spire_warden_boss.glb",
+      "category": "enemies",
+      "format": "GLB",
+      "bytes": 55032,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "npc_armorer",
+      "path": "/assets/models/npcs/npc_armorer.glb",
+      "category": "npcs",
+      "format": "GLB",
+      "bytes": 53232,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "npc_guide",
+      "path": "/assets/models/npcs/npc_guide.glb",
+      "category": "npcs",
+      "format": "GLB",
+      "bytes": 57692,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "npc_shopkeeper",
+      "path": "/assets/models/npcs/npc_shopkeeper.glb",
+      "category": "npcs",
+      "format": "GLB",
+      "bytes": 68692,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "npc_training_dummy",
+      "path": "/assets/models/npcs/npc_training_dummy.glb",
+      "category": "npcs",
+      "format": "GLB",
+      "bytes": 86356,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_armory_kiosk",
+      "path": "/assets/models/props/prop_armory_kiosk.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 20120,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_ascent_portal",
+      "path": "/assets/models/props/prop_ascent_portal.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 74896,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_blessing_shrine",
+      "path": "/assets/models/props/prop_blessing_shrine.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 33412,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_heal_orb",
+      "path": "/assets/models/props/prop_heal_orb.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 16968,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_jump_pad",
+      "path": "/assets/models/props/prop_jump_pad.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 22340,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_laser_pylon",
+      "path": "/assets/models/props/prop_laser_pylon.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 14736,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_shop_kiosk",
+      "path": "/assets/models/props/prop_shop_kiosk.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 35668,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_sky_chest",
+      "path": "/assets/models/props/prop_sky_chest.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 26244,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_sky_coin",
+      "path": "/assets/models/props/prop_sky_coin.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 15960,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_sky_tree",
+      "path": "/assets/models/props/prop_sky_tree.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 48112,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "prop_summit_spire",
+      "path": "/assets/models/props/prop_summit_spire.glb",
+      "category": "props",
+      "format": "GLB",
+      "bytes": 49664,
+      "pivot": "ground-bottom-center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "proj_starlight_lance",
+      "path": "/assets/models/weapons/proj_starlight_lance.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 18480,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "proj_void_orb",
+      "path": "/assets/models/weapons/proj_void_orb.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 17116,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "weapon_astral_halberd",
+      "path": "/assets/models/weapons/weapon_astral_halberd.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 61964,
+      "pivot": "hand-grip-origin",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "weapon_skyblade",
+      "path": "/assets/models/weapons/weapon_skyblade.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 17684,
+      "pivot": "hand-grip-origin",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "weapon_storm_katana",
+      "path": "/assets/models/weapons/weapon_storm_katana.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 33852,
+      "pivot": "hand-grip-origin",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "weapon_sunbreaker",
+      "path": "/assets/models/weapons/weapon_sunbreaker.glb",
+      "category": "weapons",
+      "format": "GLB",
+      "bytes": 45436,
+      "pivot": "hand-grip-origin",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Blender 5.3.0 (headless Python bpy)",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_crit_flare",
+      "path": "/assets/particles/fx_crit_flare.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 16411,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_hit_ring",
+      "path": "/assets/particles/fx_hit_ring.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 14570,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_rune_mote",
+      "path": "/assets/particles/fx_rune_mote.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 3398,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_slash_crescent",
+      "path": "/assets/particles/fx_slash_crescent.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 9784,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_smoke_puff",
+      "path": "/assets/particles/fx_smoke_puff.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 4607,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "fx_spark_star",
+      "path": "/assets/particles/fx_spark_star.png",
+      "category": "particles",
+      "format": "PNG",
+      "bytes": 3624,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "badge_defeat",
+      "path": "/assets/ui/badge_defeat.png",
+      "category": "ui",
+      "format": "PNG",
+      "bytes": 1331,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "badge_victory",
+      "path": "/assets/ui/badge_victory.png",
+      "category": "ui",
+      "format": "PNG",
+      "bytes": 1186,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    },
+    {
+      "id": "emblem_cloudspire",
+      "path": "/assets/ui/emblem_cloudspire.png",
+      "category": "ui",
+      "format": "PNG",
+      "bytes": 1419,
+      "pivot": "center",
+      "source": {
+        "kind": "code-authored-procedural",
+        "tool": "Python Pillow deterministic RGBA procedural generator",
+        "ai_generated": false
+      },
+      "license": "CC0-1.0 / Original Project Asset",
+      "status": "approved",
+      "technical_checks_passed": true
+    }
+  ]
+}
