@@ -44,6 +44,10 @@ export interface CloudStatusSnapshot {
   lastError: string | null;
 }
 
+// Public browser-safe Supabase project config (security is enforced via Postgres RLS).
+const DEFAULT_SUPABASE_URL = 'https://lgzjqwvmglidrafvkaig.supabase.co';
+const DEFAULT_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_NHwacSa1XkTYRRhI2DNGig_gHpX8DHM';
+
 export class CloudSyncService {
   private client: SupabaseClient | null = null;
   private user: User | null = null;
@@ -58,8 +62,10 @@ export class CloudSyncService {
     private saveManager: SaveManager,
     private events: EventBus
   ) {
-    const url = import.meta.env?.VITE_SUPABASE_URL as string | undefined;
-    const key = import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined;
+    const url = (import.meta.env?.VITE_SUPABASE_URL as string | undefined) || DEFAULT_SUPABASE_URL;
+    const key =
+      (import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY as string | undefined) ||
+      DEFAULT_SUPABASE_PUBLISHABLE_KEY;
 
     if (url && key && url.startsWith('http')) {
       this.client = createClient(url, key, {
