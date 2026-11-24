@@ -2036,6 +2036,11 @@ export class UIController {
             </div>
           `;
 
+      const isDev = Boolean(this.cloudSync?.isDeveloperAccount());
+      if (!isDev) {
+        this.debugExpanded = false;
+      }
+
       pane.innerHTML = `
         ${cloudCard}
 
@@ -2047,6 +2052,9 @@ export class UIController {
           <button class="game-btn danger" style="width:auto;flex-shrink:0;" id="btn-reset-prompt">Reset Save</button>
         </div>
 
+        ${
+          isDev
+            ? `
         <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
           <button class="filter-pill" id="btn-dbg-toggle" style="display:inline-flex;align-items:center;gap:6px;">
             <span>Developer Tools</span>
@@ -2069,6 +2077,9 @@ export class UIController {
               : ''
           }
         </div>
+        `
+            : ''
+        }
       `;
     }
 

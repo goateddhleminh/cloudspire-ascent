@@ -47,6 +47,7 @@ export interface CloudStatusSnapshot {
 // Public browser-safe Supabase project config (security is enforced via Postgres RLS).
 const DEFAULT_SUPABASE_URL = 'https://lgzjqwvmglidrafvkaig.supabase.co';
 const DEFAULT_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_NHwacSa1XkTYRRhI2DNGig_gHpX8DHM';
+export const DEV_ADMIN_EMAIL = 'leminh210709@gmail.com';
 
 export class CloudSyncService {
   private client: SupabaseClient | null = null;
@@ -79,6 +80,13 @@ export class CloudSyncService {
 
   isConfigured(): boolean {
     return this.client !== null;
+  }
+
+  isDeveloperAccount(): boolean {
+    return (
+      Boolean(this.user?.id) &&
+      this.user?.email?.trim().toLowerCase() === DEV_ADMIN_EMAIL
+    );
   }
 
   subscribe(fn: () => void): () => void {

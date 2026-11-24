@@ -86,7 +86,13 @@ export class GameApp {
       this.audio,
       this.events,
       {
-        startRun: (seed, floor) => this.startRun(seed, floor),
+        startRun: (seed, floor) => {
+          if ((seed !== undefined || (floor !== undefined && floor > 1)) && !this.cloudSync.isDeveloperAccount()) {
+            this.events.emit('toast', { text: 'Developer account required for custom seed/floor.', tone: 'danger' });
+            return;
+          }
+          this.startRun(seed, floor);
+        },
         continueEndless: () => this.continueEndlessAscent(),
         advanceFromCheckpoint: () => this.advanceToNextFloor(),
         returnToHub: () => this.enterHub(),
@@ -99,6 +105,10 @@ export class GameApp {
         applySettings: (next) => this.applySettings(next),
         resetSaveConfirmed: () => this.handleResetSave(),
         grantDebugCoins: (amt) => {
+          if (!this.cloudSync.isDeveloperAccount()) {
+            this.events.emit('toast', { text: 'Developer account required.', tone: 'danger' });
+            return;
+          }
           this.progression.grantCurrency(amt, false);
           this.events.emit('toast', { text: `Debug: +${amt} Sky Coins granted.`, tone: 'info' });
         },
