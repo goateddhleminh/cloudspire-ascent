@@ -5,7 +5,7 @@ export interface UpgradeDefinition {
   icon: 'heart' | 'sword' | 'shoe' | 'clock' | 'magnet';
   accentColor: string;
   basePrice: number;
-  priceStep: number;
+  priceMultiplier: number;
   maxLevel: number;
   perLevelValue: number;
   unitLabel: string;
@@ -82,8 +82,8 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
     description: '+20 Max Health per rank.',
     icon: 'heart',
     accentColor: '#f43f5e',
-    basePrice: 120,
-    priceStep: 95,
+    basePrice: 280,
+    priceMultiplier: 2.5,
     maxLevel: 5,
     perLevelValue: 20,
     unitLabel: '+20 HP',
@@ -94,8 +94,8 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
     description: '+15% Primary & Skill Damage per rank.',
     icon: 'sword',
     accentColor: '#38bdf8',
-    basePrice: 140,
-    priceStep: 110,
+    basePrice: 350,
+    priceMultiplier: 2.6,
     maxLevel: 5,
     perLevelValue: 0.15,
     unitLabel: '+15% DMG',
@@ -106,8 +106,8 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
     description: '+7% Movement Speed per rank.',
     icon: 'shoe',
     accentColor: '#a855f7',
-    basePrice: 110,
-    priceStep: 85,
+    basePrice: 250,
+    priceMultiplier: 2.45,
     maxLevel: 5,
     perLevelValue: 0.07,
     unitLabel: '+7% SPD',
@@ -118,8 +118,8 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
     description: '-8% Skill Cooldown time per rank.',
     icon: 'clock',
     accentColor: '#2dd4bf',
-    basePrice: 150,
-    priceStep: 115,
+    basePrice: 380,
+    priceMultiplier: 2.6,
     maxLevel: 5,
     perLevelValue: 0.08,
     unitLabel: '-8% CD',
@@ -130,8 +130,8 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
     description: 'Attract coins from afar & +12% Coin Value per rank.',
     icon: 'magnet',
     accentColor: '#fbbf24',
-    basePrice: 130,
-    priceStep: 100,
+    basePrice: 320,
+    priceMultiplier: 2.55,
     maxLevel: 5,
     perLevelValue: 1,
     unitLabel: '+Radius & +12% Coins',
@@ -141,7 +141,7 @@ export const UPGRADES: Record<string, UpgradeDefinition> = {
 export const UPGRADE_LIST: UpgradeDefinition[] = Object.values(UPGRADES);
 
 export function getUpgradePrice(def: UpgradeDefinition, currentLevel: number): number {
-  return def.basePrice + currentLevel * def.priceStep;
+  return Math.round(def.basePrice * Math.pow(def.priceMultiplier, currentLevel));
 }
 
 export const CONSUMABLES: Record<string, ConsumableDefinition> = {
@@ -149,7 +149,7 @@ export const CONSUMABLES: Record<string, ConsumableDefinition> = {
     id: 'sky_tonic',
     name: 'Sky Tonic',
     description: 'Consumable [Key C]: Restores 45 HP instantly during a run (Max 3).',
-    price: 85,
+    price: 250,
     maxCarry: 3,
     healAmount: 45,
     accentColor: '#34d399',
@@ -176,7 +176,7 @@ export const SKINS: Record<string, SkinDefinition> = {
     id: 'golden_monarch',
     name: 'Golden Crown',
     description: 'Royal cobalt tunic crowned with a gleaming sovereign diadem & starlight aura.',
-    price: 480,
+    price: 22000,
     accentColor: '#fbbf24',
     torsoColor: '#1e2952',
     trimColor: '#3b82f6',
@@ -191,7 +191,7 @@ export const SKINS: Record<string, SkinDefinition> = {
     id: 'cyber_pulse',
     name: 'Hyperion Cyber',
     description: 'Neon cyan tech-armor with holographic visor and electric trail.',
-    price: 380,
+    price: 9500,
     accentColor: '#22d3ee',
     torsoColor: '#0f293a',
     trimColor: '#22d3ee',
@@ -206,7 +206,7 @@ export const SKINS: Record<string, SkinDefinition> = {
     id: 'emerald_warden',
     name: 'Canopy Ranger',
     description: 'Verdant sky-isle cloak with floating jade crystal halo.',
-    price: 320,
+    price: 3500,
     accentColor: '#4ade80',
     torsoColor: '#143829',
     trimColor: '#4ade80',
@@ -221,7 +221,7 @@ export const SKINS: Record<string, SkinDefinition> = {
     id: 'astral_void',
     name: 'Astral Sovereign',
     description: 'Nebula-forged obsidian plate with twin void-star horns and violet sparks.',
-    price: 600,
+    price: 50000,
     accentColor: '#c084fc',
     torsoColor: '#231438',
     trimColor: '#c084fc',
@@ -254,7 +254,7 @@ export const WEAPONS: Record<string, WeaponDefinition> = {
     modelKey: 'weapon_storm_katana',
     name: 'Tempest Katana',
     description: 'Curved plasma tachi: +18% Swing Speed & +8% Slash Damage.',
-    price: 260,
+    price: 1200,
     accentColor: '#22d3ee',
     damageBonus: 0.08,
     rangeBonus: 0.1,
@@ -265,7 +265,7 @@ export const WEAPONS: Record<string, WeaponDefinition> = {
     modelKey: 'weapon_sunbreaker',
     name: 'Solar Claymore',
     description: 'Heavy sovereign greatsword: +22% Slash & Skill Damage.',
-    price: 390,
+    price: 7500,
     accentColor: '#fbbf24',
     damageBonus: 0.22,
     rangeBonus: 0.25,
@@ -276,7 +276,7 @@ export const WEAPONS: Record<string, WeaponDefinition> = {
     modelKey: 'weapon_astral_halberd',
     name: 'Starfall Glaive',
     description: 'Celestial crescent polearm: +0.75m Strike Reach & +14% Damage.',
-    price: 460,
+    price: 28000,
     accentColor: '#c084fc',
     damageBonus: 0.14,
     rangeBonus: 0.75,

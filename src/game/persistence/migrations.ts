@@ -87,10 +87,12 @@ export function migrateAndValidateSave(raw: unknown): SaveData {
       }
     }
   }
-  for (const fallbackId of defaults.equippedSkills) {
-    if (equippedSkills.length >= 2) break;
-    if (validOwnedSkills.has(fallbackId) && !equippedSkills.includes(fallbackId)) {
-      equippedSkills.push(fallbackId);
+  if (!Array.isArray(src.equippedSkills) || (rawVersion < 2 && equippedSkills.length === 0)) {
+    for (const fallbackId of defaults.equippedSkills) {
+      if (equippedSkills.length >= 2) break;
+      if (validOwnedSkills.has(fallbackId) && !equippedSkills.includes(fallbackId)) {
+        equippedSkills.push(fallbackId);
+      }
     }
   }
 

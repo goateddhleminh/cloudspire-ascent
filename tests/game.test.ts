@@ -116,16 +116,22 @@ describe('ProgressionSystem & PlayerStats', () => {
     const sm = new SaveManager(events, mem);
     const prog = new ProgressionSystem(sm, events);
 
-    // Insufficient funds initially (100 coins < 350 for Solar Nova)
+    // Insufficient funds initially (100 coins < 6,500 for Solar Nova)
     const failBuy = prog.buySkill('solar_nova');
     expect(failBuy.ok).toBe(false);
     expect(failBuy.reason).toContain('Need');
 
-    prog.grantCurrency(2500);
+    prog.grantCurrency(35000);
     expect(prog.buySkill('solar_nova').ok).toBe(true);
     expect(prog.buySkill('double_jump').ok).toBe(true);
     expect(prog.equipActiveSkill('solar_nova', 1).ok).toBe(true);
     expect(sm.getData().equippedSkills[1]).toBe('solar_nova');
+
+    // Simple 1-click unequip & re-equip toggle
+    expect(prog.toggleActiveSkill('solar_nova').ok).toBe(true);
+    expect(sm.getData().equippedSkills).not.toContain('solar_nova');
+    expect(prog.toggleActiveSkill('solar_nova').ok).toBe(true);
+    expect(sm.getData().equippedSkills).toContain('solar_nova');
 
     for (let i = 0; i < 5; i++) {
       expect(prog.buyUpgrade('vitality_core').ok).toBe(true);
@@ -156,7 +162,7 @@ describe('ProgressionSystem & PlayerStats', () => {
     expect(prog.buyWeapon('astral_halberd').ok).toBe(false);
 
     const baseStats = computePlayerStats(sm.getData(), {});
-    prog.grantCurrency(2000);
+    prog.grantCurrency(35000);
 
     expect(prog.buyWeapon('storm_katana').ok).toBe(true);
     expect(prog.buyWeapon('storm_katana').ok).toBe(false); // duplicate blocked

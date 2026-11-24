@@ -56,7 +56,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     icon: 'nova',
     accentColor: '#c084fc',
     cooldown: 6.0,
-    price: 350,
+    price: 6500,
     damageMultiplier: 1.85,
     radius: 5.4,
   },
@@ -68,7 +68,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     icon: 'shield',
     accentColor: '#4ade80',
     cooldown: 8.5,
-    price: 420,
+    price: 14000,
     shieldAmount: 45,
     healAmount: 20,
   },
@@ -80,7 +80,7 @@ export const SKILLS: Record<string, SkillDefinition> = {
     icon: 'wings',
     accentColor: '#60a5fa',
     cooldown: 0,
-    price: 300,
+    price: 2500,
   },
 };
 

@@ -14,10 +14,11 @@ export class InputManager {
   private rightMouseHeld = false;
   private lastClientX = 0;
   private lastClientY = 0;
+  private hasLastMousePos = false;
+  private mouseNormX = 0.5;
   private suspended = false;
   public pointerLocked = false;
   public freeMouseMode = false;
-  private suppressNextUnlockPause = false;
   public gamepadConnected = false;
 
   // Gamepad per-frame state
@@ -37,11 +38,11 @@ export class InputManager {
     window.addEventListener('keydown', this.onKeyDown);
     window.addEventListener('keyup', this.onKeyUp);
     window.addEventListener('blur', this.clearInputState);
-    document.addEventListener('pointerlockchange', this.onPointerLockChange);
-    document.addEventListener('mousemove', this.onMouseMove);
+    window.addEventListener('mousemove', this.onMouseMove);
     this.canvas.addEventListener('mousedown', this.onMouseDown);
     window.addEventListener('mouseup', this.onMouseUp);
     this.canvas.addEventListener('contextmenu', this.onContextMenu);
+    this.updateCanvasCursor();
   }
 
   setEscapeHandler(fn: () => void): void {
@@ -57,7 +58,15 @@ export class InputManager {
     if (value) {
       this.clearInputState();
       this.exitPointerLock();
+    } else {
+      this.hasLastMousePos = false;
+      this.pointerLocked = !this.freeMouseMode;
     }
+    this.updateCanvasCursor();
+  }
+
+  private updateCanvasCursor(): void {
+    this.canvas.style.cursor = this.suspended || this.freeMouseMode ? 'default' : 'crosshair';
   }
 
   isSuspended(): boolean {
@@ -139,15 +148,11 @@ export class InputManager {
   }
 
   requestPointerLock(): void {
-    if (this.suspended || document.pointerLockElement === this.canvas) return;
-    try {
-      const maybePromise = this.canvas.requestPointerLock?.() as unknown as Promise<void> | undefined;
-      if (maybePromise && typeof maybePromise.catch === 'function') {
-        maybePromise.catch(() => {});
-      }
-    } catch {
-      // Ignore
-    }
+    // Use banner-free View Lock (no browser requestPointerLock popup).
+    this.freeMouseMode = false;
+    this.pointerLocked = !this.suspended;
+    this.hasLastMousePos = false;
+    this.updateCanvasCursor();
   }
 
   exitPointerLock(): void {
@@ -159,32 +164,15 @@ export class InputManager {
       }
     }
     this.pointerLocked = false;
+    this.hasLastMousePos = false;
+    this.updateCanvasCursor();
   }
-
-  private onPointerLockChange = (): void => {
-    const wasLocked = this.pointerLocked;
-    this.pointerLocked = document.pointerLockElement === this.canvas;
-    if (wasLocked && !this.pointerLocked) {
-      if (this.suppressNextUnlockPause) {
-        this.suppressNextUnlockPause = false;
-        return;
-      }
-      if (!this.suspended && !this.freeMouseMode) {
-        this.onEscapeCallback?.();
-      }
-    }
-  };
 
   private toggleFreeMouseMode(): void {
     this.freeMouseMode = !this.freeMouseMode;
-    if (this.freeMouseMode) {
-      if (document.pointerLockElement === this.canvas) {
-        this.suppressNextUnlockPause = true;
-        this.exitPointerLock();
-      }
-    } else {
-      this.requestPointerLock();
-    }
+    this.pointerLocked = !this.freeMouseMode && !this.suspended;
+    this.hasLastMousePos = false;
+    this.updateCanvasCursor();
     this.onFreeMouseToggleCallback?.(this.freeMouseMode);
   }
 
@@ -234,15 +222,13 @@ export class InputManager {
     if (this.suspended) return;
 
     if (e.button === 0) {
-      if (!this.pointerLocked && !this.freeMouseMode) {
-        this.requestPointerLock();
-      }
       this.primaryHeld = true;
       this.primaryJustPressed = true;
     } else if (e.button === 2) {
       this.rightMouseHeld = true;
       this.lastClientX = e.clientX;
       this.lastClientY = e.clientY;
+      this.hasLastMousePos = true;
     }
   };
 
@@ -255,18 +241,30 @@ export class InputManager {
   };
 
   private onMouseMove = (e: MouseEvent): void => {
-    if (this.suspended) return;
+    if (this.suspended) {
+      this.hasLastMousePos = false;
+      return;
+    }
 
-    if (this.pointerLocked) {
-      this.mouseDeltaX += e.movementX || 0;
-      this.mouseDeltaY += e.movementY || 0;
-    } else if (this.rightMouseHeld) {
+    this.mouseNormX = window.innerWidth > 0 ? e.clientX / window.innerWidth : 0.5;
+
+    if (!this.freeMouseMode || this.rightMouseHeld) {
+      if (!this.hasLastMousePos) {
+        this.lastClientX = e.clientX;
+        this.lastClientY = e.clientY;
+        this.hasLastMousePos = true;
+        return;
+      }
       const dx = e.clientX - this.lastClientX;
       const dy = e.clientY - this.lastClientY;
       this.lastClientX = e.clientX;
       this.lastClientY = e.clientY;
-      this.mouseDeltaX += dx * 1.6;
-      this.mouseDeltaY += dy * 1.6;
+      this.mouseDeltaX += dx * 1.45;
+      this.mouseDeltaY += dy * 1.45;
+    } else {
+      this.lastClientX = e.clientX;
+      this.lastClientY = e.clientY;
+      this.hasLastMousePos = true;
     }
   };
 
@@ -306,6 +304,10 @@ export class InputManager {
     let turn = -this.gpLookX * 1.35;
     if (this.heldKeys.has('ArrowLeft')) turn += 1;
     if (this.heldKeys.has('ArrowRight')) turn -= 1;
+    if (!this.freeMouseMode) {
+      if (this.mouseNormX < 0.03) turn += 0.95;
+      else if (this.mouseNormX > 0.97) turn -= 0.95;
+    }
     return turn;
   }
 
@@ -376,8 +378,7 @@ export class InputManager {
     window.removeEventListener('keydown', this.onKeyDown);
     window.removeEventListener('keyup', this.onKeyUp);
     window.removeEventListener('blur', this.clearInputState);
-    document.removeEventListener('pointerlockchange', this.onPointerLockChange);
-    document.removeEventListener('mousemove', this.onMouseMove);
+    window.removeEventListener('mousemove', this.onMouseMove);
     this.canvas.removeEventListener('mousedown', this.onMouseDown);
     window.removeEventListener('mouseup', this.onMouseUp);
     this.canvas.removeEventListener('contextmenu', this.onContextMenu);

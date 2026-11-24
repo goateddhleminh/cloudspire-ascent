@@ -1145,14 +1145,16 @@ export class UIController {
         const canAfford = save.currency >= sk.price;
 
         let actionBtn = '';
-        if (equipped) {
-          actionBtn = `<button class="game-btn equipped" disabled>${ICONS.check}<span>Equipped</span></button>`;
+        if (equipped && sk.kind === 'active') {
+          actionBtn = `<button class="game-btn equipped" data-toggle-skill="${sk.id}" title="Click to unequip">${ICONS.check}<span>Unequip</span></button>`;
+        } else if (equipped) {
+          actionBtn = `<button class="game-btn equipped" disabled>${ICONS.check}<span>Active</span></button>`;
         } else if (owned) {
-          actionBtn = `<button class="game-btn ivory" data-eq-skill="${sk.id}">Equip</button>`;
+          actionBtn = `<button class="game-btn ivory" data-toggle-skill="${sk.id}">Equip</button>`;
         } else {
           actionBtn = `<button class="game-btn ivory" data-buy-skill="${sk.id}" ${
             canAfford ? '' : 'disabled'
-          }>${canAfford ? 'Buy' : `Need ${sk.price}`}</button>`;
+          }>${canAfford ? 'Buy' : `Need ${sk.price.toLocaleString()}`}</button>`;
         }
 
         cards.push(`
@@ -1288,10 +1290,10 @@ export class UIController {
           res.ok ? this.audio.playBuy() : this.audio.playError();
         });
       });
-      gridEl.querySelectorAll<HTMLButtonElement>('[data-eq-skill]').forEach((b) => {
+      gridEl.querySelectorAll<HTMLButtonElement>('[data-toggle-skill]').forEach((b) => {
         b.addEventListener('click', () => {
           this.audio.playClick();
-          this.progression.equipActiveSkill(b.dataset.eqSkill!);
+          this.progression.toggleActiveSkill(b.dataset.toggleSkill!);
         });
       });
       gridEl.querySelectorAll<HTMLButtonElement>('[data-buy-tonic]').forEach((b) => {
@@ -1480,7 +1482,15 @@ export class UIController {
       tilesEl.querySelectorAll<HTMLButtonElement>('[data-tile-key]').forEach((b) => {
         b.addEventListener('click', () => {
           this.audio.playClick();
-          this.selectedInvKey = b.dataset.tileKey!;
+          const key = b.dataset.tileKey!;
+          if (key.startsWith('skill:')) {
+            const skId = key.slice(6);
+            if (SKILLS[skId]?.kind === 'active' && this.selectedInvKey === key) {
+              this.progression.toggleActiveSkill(skId);
+              return;
+            }
+          }
+          this.selectedInvKey = key;
           this.updateInventoryContent();
         });
       });
@@ -1498,9 +1508,15 @@ export class UIController {
     } else if (sel?.kind === 'skill') {
       const sk = SKILLS[sel.id];
       if (sk.kind === 'active') {
+        const isEquipped = save.equippedSkills.includes(sel.id);
         actionControls = `
-          <button class="game-btn periwinkle" id="btn-inv-q">Equip to Slot Q</button>
-          <button class="game-btn slate" id="btn-inv-e">Equip to Slot E</button>
+          <button class="game-btn ${isEquipped ? 'equipped' : 'ivory'}" id="btn-inv-toggle-skill">
+            ${isEquipped ? `${ICONS.check}<span>Unequip Skill</span>` : 'Equip Skill'}
+          </button>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <button class="game-btn periwinkle" id="btn-inv-q">Slot Q</button>
+            <button class="game-btn slate" id="btn-inv-e">Slot E</button>
+          </div>
         `;
       } else {
         actionControls = `<button class="game-btn equipped" disabled>${ICONS.check}<span>Always Active</span></button>`;
@@ -1546,6 +1562,12 @@ export class UIController {
       if (sel) {
         this.audio.playClick();
         this.progression.equipWeapon(sel.id);
+      }
+    });
+    insp.querySelector('#btn-inv-toggle-skill')?.addEventListener('click', () => {
+      if (sel) {
+        this.audio.playClick();
+        this.progression.toggleActiveSkill(sel.id);
       }
     });
     insp.querySelector('#btn-inv-q')?.addEventListener('click', () => {

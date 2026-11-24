@@ -117,14 +117,8 @@ export class GameApp {
     );
 
     this.input.setEscapeHandler(() => this.handleEscapeKey());
-    this.input.setFreeMouseToggleHandler((free) => {
+    this.input.setFreeMouseToggleHandler(() => {
       this.audio.playClick();
-      this.events.emit('toast', {
-        text: free
-          ? 'Free Mouse Mode (Left Alt to lock view)'
-          : 'View Lock Mode (Left Alt to free mouse)',
-        tone: 'info',
-      });
     });
     this.wireGameEvents();
     this.syncCosmeticsAndSettings();

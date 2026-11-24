@@ -159,6 +159,36 @@ export class ProgressionSystem {
     return { ok: true };
   }
 
+  unequipActiveSkill(skillId: string): PurchaseResult {
+    const def = SKILLS[skillId];
+    if (!def || def.kind !== 'active') {
+      return { ok: false, reason: 'Passive mobility tools cannot be unequipped.' };
+    }
+
+    const save = this.saveManager.getData();
+    if (!save.equippedSkills.includes(skillId)) {
+      return { ok: false, reason: 'Skill is not currently equipped.' };
+    }
+
+    this.saveManager.update((draft) => {
+      draft.equippedSkills = draft.equippedSkills.filter((id) => id !== skillId);
+    });
+
+    this.events.emit('toast', {
+      text: `Unequipped ${def.name}.`,
+      tone: 'info',
+    });
+    return { ok: true };
+  }
+
+  toggleActiveSkill(skillId: string): PurchaseResult {
+    const save = this.saveManager.getData();
+    if (save.equippedSkills.includes(skillId)) {
+      return this.unequipActiveSkill(skillId);
+    }
+    return this.equipActiveSkill(skillId);
+  }
+
   buySkin(skinId: string): PurchaseResult {
     const def = SKINS[skinId];
     if (!def) return { ok: false, reason: 'Unknown skin.' };
